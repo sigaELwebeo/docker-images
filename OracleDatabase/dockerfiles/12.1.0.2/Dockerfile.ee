@@ -64,7 +64,8 @@ RUN mkdir -p $ORACLE_BASE && \
     echo oracle:oracle | chpasswd && \
     yum -y install oracle-rdbms-server-12cR1-preinstall unzip wget tar && \
     yum clean all && \
-    chown -R oracle:dba $ORACLE_BASE
+    chown -R oracle:dba $ORACLE_BASE \
+    chmod 777 $ORACLE_BASE/$RUN_FILE
 
 WORKDIR $INSTALL_DIR
 
